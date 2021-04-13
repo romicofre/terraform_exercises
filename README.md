@@ -7,7 +7,7 @@ In the same folder as the main.tf or terraform file.
 
 ```shell
 terraform init
-terraform deploy 
+terraform apply 
 ```
 
 To "stop" architecture:
