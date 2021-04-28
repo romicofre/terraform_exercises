@@ -53,7 +53,7 @@ resource "google_monitoring_alert_policy" "dataflow_alert_policy" {
   display_name = "Dataflow Alert Policy"
   combiner     = "OR"
   conditions {
-    display_name = "condition"
+    display_name = format("Log error in %s dataflow job", var.dataflow_job_name)
     condition_threshold {
       filter     = format("metric.type=\"logging.googleapis.com/user/%s\" AND resource.type=\"dataflow_job\"", google_logging_metric.dataflow_logging_metric.name)
       duration   = "60s"
